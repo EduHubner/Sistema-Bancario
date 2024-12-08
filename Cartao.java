@@ -27,11 +27,23 @@ public class Cartao {
 		this.validade = validade;
 	}
 	
-	public double Pagar() {
-		return 0;
-	}
-	
 	public double PagarFatura() {
 		return 0;
 	}
+	@Override
+	public String toString() {
+		StringBuilder builder = new StringBuilder();
+		builder.append("Cartao [numCartao=");
+		builder.append(numCartao);
+		builder.append(", CVV=");
+		builder.append(CVV);
+		builder.append(", validade=");
+		builder.append(validade);
+		builder.append(", toString()=");
+		builder.append(super.toString());
+		builder.append("]");
+		return builder.toString();
+	}
+	
+	
 }

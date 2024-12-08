@@ -11,6 +11,17 @@ public class Conta {
 	protected List<Transferencia> Tranferencias;
 	protected Cartao cartao;
 	
+	public Conta() {
+		this.saldo = 0;
+	}
+	
+	public Conta(int numConta, int agencia, Usuario usuario) {
+		this.saldo = 0;
+		this.numConta = numConta;
+		this.agencia = agencia;
+		this.usuario = usuario;
+	}
+	
 	public double getSaldo() {
 		return saldo;
 	}
@@ -35,5 +46,27 @@ public class Conta {
 	public void setUsuario(Usuario usuario) {
 		this.usuario = usuario;
 	}
+	
+	
+	@Override
+	public String toString() {
+		StringBuilder builder = new StringBuilder();
+		builder.append("Conta [saldo=");
+		builder.append(saldo);
+		builder.append(", numConta=");
+		builder.append(numConta);
+		builder.append(", agencia=");
+		builder.append(agencia);
+		builder.append(", usuario=");
+		builder.append(usuario);
+		builder.append(", Tranferencias=");
+		builder.append(Tranferencias);
+		builder.append(", cartao=");
+		builder.append(cartao);
+		builder.append("]");
+		return builder.toString();
+	}
+	
+	
 	
 }

@@ -6,6 +6,16 @@ public class Usuario {
 	private String nome;
 	private String CPF;
 	
+	public Usuario() {
+		
+	}
+	
+	public Usuario(int idUsuario, String nome, String cPF) {
+		this.idUsuario = idUsuario;
+		this.nome = nome;
+		this.CPF = cPF;
+	}
+	
 	public int getIdUsuario() {
 		return idUsuario;
 	}
@@ -23,6 +33,19 @@ public class Usuario {
 	}
 	public void setCPF(String cPF) {
 		CPF = cPF;
+	}
+	
+	@Override
+	public String toString() {
+		StringBuilder builder = new StringBuilder();
+		builder.append("Usuario [idUsuario=");
+		builder.append(idUsuario);
+		builder.append(", nome=");
+		builder.append(nome);
+		builder.append(", CPF=");
+		builder.append(CPF);
+		builder.append("]");
+		return builder.toString();
 	}
 	
 	
