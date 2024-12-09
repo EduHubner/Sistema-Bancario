@@ -8,7 +8,7 @@ public class Transferencia {
 	private double valor;
 	
 	public Transferencia() {
-		
+		this.data = LocalDate.now();
 	}
 	
 	public Transferencia(double valor) {
@@ -30,12 +30,12 @@ public class Transferencia {
 		this.valor = valor;
 	}
 	
-	public void Tranferir(Conta conta, double valor) {
+	public void Tranferir(Conta contaPaga, Conta contaRecebe) {
 		
-		Transferencia trans = new Transferencia(valor);
-		
-		conta.setSaldo(conta.getSaldo() + valor);
-		//conta.Tranferencias.add(trans);
+		contaPaga.setSaldo(contaPaga.getSaldo() - this.valor);
+		contaRecebe.setSaldo(contaRecebe.getSaldo() + this.valor);
+		contaPaga.addTransferencia(this);
+		contaRecebe.addTransferencia(this);
 
 	
 	}
@@ -51,8 +51,6 @@ public class Transferencia {
 		builder.append(data);
 		builder.append(", valor=");
 		builder.append(valor);
-		builder.append(", toString()=");
-		builder.append(super.toString());
 		builder.append("]");
 		return builder.toString();
 	}

@@ -1,5 +1,6 @@
 package trabalhoFinalPOO;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Conta {
@@ -13,6 +14,7 @@ public class Conta {
 	
 	public Conta() {
 		this.saldo = 0;
+		this.Tranferencias = new ArrayList<>();
 	}
 	
 	public Conta(int numConta, int agencia, Usuario usuario) {
@@ -20,6 +22,7 @@ public class Conta {
 		this.numConta = numConta;
 		this.agencia = agencia;
 		this.usuario = usuario;
+		this.Tranferencias = new ArrayList<>();
 	}
 	
 	public double getSaldo() {
@@ -45,6 +48,10 @@ public class Conta {
 	}
 	public void setUsuario(Usuario usuario) {
 		this.usuario = usuario;
+	}
+	
+	public void addTransferencia(Transferencia transferencia) {
+		this.Tranferencias.add(transferencia);
 	}
 	
 	
